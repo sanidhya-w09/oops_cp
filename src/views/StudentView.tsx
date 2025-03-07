@@ -1,0 +1,202 @@
+import React, { useState } from 'react';
+import {Search, MapPin, Building} from 'lucide-react';
+import { PropertyCard } from '../Components/PropertyCard';
+import { properties } from '../Data/properties';
+
+const StudentView: React.FC = () => {
+    const [searchQuery, setSearchQuery] = useState('');
+
+    return (
+        <div className="flex flex-col">
+            {/* Hero Section */}
+            <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-3xl mx-auto text-center">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                            Find Your Perfect Student Home
+                        </h1>
+                        <p className="text-xl mb-8">
+                            Connect directly with landlords. No broker fees. No hassle.
+                        </p>
+
+                        {/* Search Bar */}
+                        <div className="bg-white rounded-lg shadow-lg p-2 flex flex-col md:flex-row">
+                            <div className="flex-grow flex items-center px-4 py-2">
+                                <Search className="h-5 w-5 text-gray-400 mr-2"/>
+                                <input
+                                    type="text"
+                                    placeholder="Search by city, university, or area..."
+                                    className="w-full outline-none text-gray-800"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                />
+                            </div>
+                            <a href="#">
+                                <button
+                                    className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors mt-2 md:mt-0">
+                                    Find Properties
+                                </button>
+                            </a>
+                        </div>
+
+                        {/* Quick Filters
+                        <div className="flex flex-wrap justify-center gap-3 mt-6">
+                            <button className="bg-blue-700 bg-opacity-50 hover:bg-opacity-70 px-4 py-2 rounded-full flex items-center space-x-2 transition-colors">
+                                <MapPin className="h-4 w-4" />
+                                <span>Near Campus</span>
+                            </button>
+                            <button className="bg-blue-700 bg-opacity-50 hover:bg-opacity-70 px-4 py-2 rounded-full flex items-center space-x-2 transition-colors">
+                                <IndianRupeeIcon className="h-4 w-4" />
+                                <span>Budget Friendly</span>
+                            </button>
+                            <button className="bg-blue-700 bg-opacity-50 hover:bg-opacity-70 px-4 py-2 rounded-full flex items-center space-x-2 transition-colors">
+                                <Users className="h-4 w-4" />
+                                <span>Shared Flats</span>
+                            </button>
+                            <button className="bg-blue-700 bg-opacity-50 hover:bg-opacity-70 px-4 py-2 rounded-full flex items-center space-x-2 transition-colors">
+                                <Filter className="h-4 w-4" />
+                                <span>More Filters</span>
+                            </button>
+                        </div>*/}
+                    </div>
+                </div>
+            </section>
+
+            {/* Featured Properties */}
+            <section className="py-12 bg-white">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold text-center mb-10">Featured Student Properties</h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {properties.slice(0, 6).map((property) => (
+                            <PropertyCard key={property.id} property={property}/>
+                        ))}
+                    </div>
+
+
+                    <div className="text-center mt-10">
+                        <a href="#" className="w-full">
+                            <button
+                                className="px-6 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors">
+                                View All Properties
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* How It Works */}
+            <section className="py-12 bg-gray-50">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold text-center mb-10">How StudentNest Works</h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Search className="h-8 w-8 text-blue-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold mb-3">Search Properties</h3>
+                            <p className="text-gray-600">
+                                Browse through verified student accommodations near your university or preferred location.
+                            </p>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Building className="h-8 w-8 text-blue-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold mb-3">Connect Directly</h3>
+                            <p className="text-gray-600">
+                                Contact landlords directly without any middlemen or broker fees.
+                            </p>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <MapPin className="h-8 w-8 text-blue-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold mb-3">Move In</h3>
+                            <p className="text-gray-600">
+                                Schedule a viewing, sign your lease, and move into your new student home.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials */}
+            <section className="py-12 bg-white">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold text-center mb-10">What Students Say</h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="bg-gray-50 p-6 rounded-lg">
+                            <p className="text-gray-600 mb-4">
+                                "StudentNest helped me find an affordable apartment just 10 minutes from my university. The direct connection with my landlord made everything so much easier!"
+                            </p>
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 bg-blue-100 rounded-full mr-3"></div>
+                                <div>
+                                    <p className="font-medium">Sarah Johnson</p>
+                                    <p className="text-sm text-gray-500">Computer Science Student</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-gray-50 p-6 rounded-lg">
+                            <p className="text-gray-600 mb-4">
+                                "I was able to find a great shared flat with other students in my program. The platform made it easy to filter for exactly what I needed."
+                            </p>
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 bg-blue-100 rounded-full mr-3"></div>
+                                <div>
+                                    <p className="font-medium">Michael Chen</p>
+                                    <p className="text-sm text-gray-500">Business Administration Student</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-gray-50 p-6 rounded-lg">
+                            <p className="text-gray-600 mb-4">
+                                "As an international student, finding accommodation was my biggest worry. StudentNest made it simple and I saved so much by avoiding broker fees!"
+                            </p>
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 bg-blue-100 rounded-full mr-3"></div>
+                                <div>
+                                    <p className="font-medium">Elena Rodriguez</p>
+                                    <p className="text-sm text-gray-500">Engineering Student</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="py-12 bg-blue-600 text-white">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-3xl font-bold mb-6">Ready to Find Your Student Home?</h2>
+                    <p className="text-xl mb-8 max-w-2xl mx-auto">
+                        Join thousands of students who found their perfect accommodation without paying broker fees.
+                    </p>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#">
+                            <button
+                                className="px-6 py-3 bg-white text-blue-600 rounded-md font-medium hover:bg-gray-100 transition-colors">
+                                Search Properties
+                            </button>
+                        </a>
+                        <a href="#">
+                            <button
+                                className="px-6 py-3 bg-blue-700 text-white rounded-md font-medium hover:bg-blue-800 transition-colors">
+                                Sign Up Now
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+};
+
+export default StudentView;
