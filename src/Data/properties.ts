@@ -81,7 +81,7 @@ export const properties: Property[] = [
         bedrooms: 1,
         type: "Entire Apartment",
         amenities: ["Fully Furnished", "Washing Machine", "Wi-Fi", "Elevator", "Parking"],
-        imageUrl: "https://images.unsplash.com/photo-1606782181195-74ba9b8c1d45?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAyOXwwfDF8c2VhY2h8Mnx8YXBhcnRtZW50fGVufDB8fHx8fDE2NzAwMzkwMTk&ixlib=rb-4.0.3&q=80&w=1080",
+        imageUrl: "https://images.unsplash.com/photo-1499916078039-922301b0eb9b?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "5 minutes walk to MG Road",
         available: "Available now"
     },
@@ -93,7 +93,7 @@ export const properties: Property[] = [
         bedrooms: 1,
         type: "Studio",
         amenities: ["Balcony", "Air Conditioning", "Wi-Fi", "24/7 Security", "Swimming Pool"],
-        imageUrl: "https://images.unsplash.com/photo-1574764083327-4a6346e4b3ac?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAyOXwwfDF8c2VhY2h8MXx8YXBhcnRtZW50fGVufDB8fHx8fDE2NzAwMzkwNjc&ixlib=rb-4.0.3&q=80&w=1080",
+        imageUrl: "https://images.unsplash.com/photo-1499955085172-a104c9463ece?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "10 minutes drive to Pune Station",
         available: "From March 15"
     },
@@ -105,7 +105,7 @@ export const properties: Property[] = [
         bedrooms: 2,
         type: "Entire Apartment",
         amenities: ["Private Terrace", "Jacuzzi", "Gym", "Smart Home Features", "24/7 Security"],
-        imageUrl: "https://images.unsplash.com/photo-1596620043383-cf83d6fc69d4?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAyOXwwfDF8c2VhY2h8Mnx8cGVudGhvdXNlfGVufDB8fHx8fDE2NzAwMzkwNzA&ixlib=rb-4.0.3&q=80&w=1080",
+        imageUrl: "https://images.unsplash.com/photo-1560185007-5f0bb1866cab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "15 minutes drive to Hinjewadi IT Park",
         available: "Available now"
     },
@@ -117,7 +117,7 @@ export const properties: Property[] = [
         bedrooms: 1,
         type: "Private Room",
         amenities: ["Garden View", "Fully Furnished", "Wi-Fi", "Dishwasher", "Parking"],
-        imageUrl: "https://images.unsplash.com/photo-1567027920-e45f877244d3?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAyOXwwfDF8c2VhY2h8Mnx8YXBhcnRtZW50fGVufDB8fHx8fDE2NzAwMzkwNDE&ixlib=rb-4.0.3&q=80&w=1080",
+        imageUrl: "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1992&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "5 minutes walk to Viman Nagar Mall",
         available: "From April 1"
     },
@@ -129,7 +129,7 @@ export const properties: Property[] = [
         bedrooms: 1,
         type: "Entire Apartment",
         amenities: ["Fully Furnished", "Washing Machine", "Wi-Fi", "Lift", "24/7 Water Supply"],
-        imageUrl: "https://images.unsplash.com/photo-1564535501-c544bfcbab7a?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAyOXwwfDF8c2VhY2h8OHx8YXBhcnRtZW50fGVufDB8fHx8fDE2NzAwMzkwNjI&ixlib=rb-4.0.3&q=80&w=1080",
+        imageUrl: "https://images.unsplash.com/photo-1531835551805-16d864c8d311?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "10 minutes drive to Koregaon Park",
         available: "From March 25"
     },
@@ -141,7 +141,7 @@ export const properties: Property[] = [
         bedrooms: 1,
         type: "Studio",
         amenities: ["Swimming Pool", "Wi-Fi", "Parking", "Lift", "24/7 Security"],
-        imageUrl: "https://images.unsplash.com/photo-1574796829746-c60bdbcd3e58?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAyOXwwfDF8c2VhY2h8NXx8YXBhcnRtZW50fGVufDB8fHx8fDE2NzAwMzkwNzE&ixlib=rb-4.0.3&q=80&w=1080",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1683888725040-f305c0bf7820?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "20 minutes drive to Hinjewadi IT Park",
         available: "Available now"
     },
@@ -153,7 +153,7 @@ export const properties: Property[] = [
         bedrooms: 1,
         type: "Private Room",
         amenities: ["City View", "Wi-Fi", "AC", "Fully Furnished", "Parking"],
-        imageUrl: "https://images.unsplash.com/photo-1583981890305-411f8bcfd350?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAyOXwwfDF8c2VhY2h8Nnx8YXBhcnRtZW50fGVufDB8fHx8fDE2NzAwMzkwODI&ixlib=rb-4.0.3&q=80&w=1080",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1684175656172-19a7ee56f0c8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "15 minutes drive to Pune University",
         available: "From March 22"
     },
@@ -165,7 +165,7 @@ export const properties: Property[] = [
         bedrooms: 1,
         type: "Studio",
         amenities: ["Gym", "Wi-Fi", "Washing Machine", "24/7 Security", "Elevator"],
-        imageUrl: "https://images.unsplash.com/photo-1601594948104-c7f4f9c6b4be?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAyOXwwfDF8c2VhY2h8OHx8YXBhcnRtZW50fGVufDB8fHx8fDE2NzAwMzkwODE&ixlib=rb-4.0.3&q=80&w=1080",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1661962296943-bc59322f6424?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "10 minutes walk to Dmart",
         available: "Available now"
     },
@@ -177,8 +177,9 @@ export const properties: Property[] = [
         bedrooms: 3,
         type: "Entire Apartment",
         amenities: ["Home Theater", "Swimming Pool", "Gym", "Wi-Fi", "24/7 Security"],
-        imageUrl: "https://images.unsplash.com/photo-1602093074075-b88bffcecb64?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAyOXwwfDF8c2VhY2h8M3x8YXBhcnRtZW50fGVufDB8fHx8fDE2NzAwMzkwODg&ixlib=rb-4.0.3&q=80&w=1080",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1675615667883-38c070716700?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "20 minutes drive to Magarpatta City",
         available: "From April 5"
     }
 ];
+export default properties

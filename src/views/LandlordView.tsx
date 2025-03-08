@@ -336,12 +336,6 @@ const LandlordView: React.FC = () => {
                         <a href="#">
                             <button
                                 className="px-6 py-3 bg-white text-indigo-600 rounded-md font-medium hover:bg-gray-100 transition-colors">
-                                Learn More
-                            </button>
-                        </a>
-                        <a href="#">
-                            <button
-                                className="px-6 py-3 bg-indigo-800 text-white rounded-md font-medium hover:bg-indigo-900 transition-colors">
                                 List Your Property
                             </button>
                         </a>

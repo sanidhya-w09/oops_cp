@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Home, UserPlus, LogIn, Menu, X } from 'lucide-react';
-
+import {Home, UserPlus, LogIn, Menu, X, Building} from 'lucide-react';
+import { Link } from "react-router-dom";
 interface NavbarProps {
     userType: 'student' | 'landlord';
     setUserType: (type: 'student' | 'landlord') => void;
@@ -14,10 +14,10 @@ const Navbar: React.FC<NavbarProps> = ({ userType, setUserType }) => {
             <div className="container mx-auto px-4 py-3">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
-                    <div className="flex items-center space-x-2">
+                    <Link to="/" className="flex items-center space-x-2">
                         <Home className="h-6 w-6 text-blue-600" />
                         <span className="text-xl font-bold text-blue-600">StudentNest</span>
-                    </div>
+                    </Link>
 
                     {/* User Type Toggle */}
                     <div className="hidden md:flex items-center bg-gray-100 rounded-full p-1">
@@ -44,31 +44,34 @@ const Navbar: React.FC<NavbarProps> = ({ userType, setUserType }) => {
                     </div>
 
                     {/* Navigation Links - Desktop */}
-                    <div className="hidden md:flex items-center space-x-4">
+                    <div className="hidden md:flex items-center justify-between space-x-1">
+                        <Link to="/properties" className="px-4 py-2 text-gray-700 hover:text-blue-600 flex items-center space-x-1">
+                            <Building className="h-4 w-4"/>
+                            <span>All Properties</span>
+                        </Link>
 
-                        <div className="flex items-center space-x-2">
-                            <button className="flex items-center space-x-1 px-3 py-2 text-gray-700 hover:text-blue-600">
-                                <a href="#" className="flex items-center space-x-1">
-                                    <LogIn className="h-4 w-4"/>
-                                    <span>Login</span>
-                                </a>
-                            </button>
-                            <button
-                                className="flex items-center space-x-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-                                <a href="#" className="flex items-center space-x-1">
-                                <UserPlus className="h-4 w-4"/>
-                                <span>Sign Up</span>
-                                </a>
-                            </button>
-                        </div>
+                        <Link to="/login"
+                              className="px-4 py-2 text-gray-700 hover:text-blue-600 flex items-center space-x-1">
+                            <LogIn className="h-4 w-4"/>
+                            <span>Login</span>
+                        </Link>
+
+                        <Link
+                            to="/signup"
+                            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center space-x-1"
+                        >
+                            <UserPlus className="h-4 w-4"/>
+                            <span>Sign Up</span>
+                        </Link>
                     </div>
+
 
                     {/* Mobile Menu Button */}
                     <button
                         className="md:hidden text-gray-700"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
-                        {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                        {mobileMenuOpen ? <X className="h-6 w-6"/> : <Menu className="h-6 w-6"/>}
                     </button>
                 </div>
 

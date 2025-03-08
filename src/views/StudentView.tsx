@@ -1,10 +1,34 @@
-import React, { useState } from 'react';
+import React, {useState,useRef} from 'react';
 import {Search, MapPin, Building} from 'lucide-react';
+import { Link } from "react-router-dom";
 import { PropertyCard } from '../Components/PropertyCard';
 import { properties } from '../Data/properties';
+import { useNavigate } from 'react-router-dom'; // ✅ Import useNavigate
+
 
 const StudentView: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
+    const [searchOpen, setSearchOpen] = useState(false); // State to open search bar
+    const searchRef = useRef<HTMLDivElement>(null); // Ref for search bar container
+    const navigate = useNavigate(); // ✅ Initialize navigation
+
+    // Function to scroll to top and open search bar
+    const handleSearchClick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setSearchOpen(true);
+
+        // Optional: Focus on input field after scrolling
+        setTimeout(() => {
+            searchRef.current?.querySelector("input")?.focus();
+        }, 300); // Delay ensures scroll completes first
+    };
+    const handleViewAllProperties = () => {
+        navigate('/properties');
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100); // Ensure scroll happens after navigation
+    };
+
 
     return (
         <div className="flex flex-col">
@@ -20,9 +44,14 @@ const StudentView: React.FC = () => {
                         </p>
 
                         {/* Search Bar */}
-                        <div className="bg-white rounded-lg shadow-lg p-2 flex flex-col md:flex-row">
+                        <div
+                            ref={searchRef}
+                            className={`bg-white rounded-lg shadow-lg p-2 flex flex-col md:flex-row transition-all duration-300 ${
+                                searchOpen ? "border-2 border-blue-600" : ""
+                            }`}
+                        >
                             <div className="flex-grow flex items-center px-4 py-2">
-                                <Search className="h-5 w-5 text-gray-400 mr-2"/>
+                                <Search className="h-5 w-5 text-gray-400 mr-2" />
                                 <input
                                     type="text"
                                     placeholder="Search by city, university, or area..."
@@ -31,12 +60,11 @@ const StudentView: React.FC = () => {
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                 />
                             </div>
-                            <a href="#">
-                                <button
-                                    className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors mt-2 md:mt-0">
-                                    Find Properties
-                                </button>
-                            </a>
+                            <button
+                                className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors mt-2 md:mt-0"
+                            >
+                                Find Properties
+                            </button>
                         </div>
 
                         {/* Quick Filters
@@ -62,25 +90,23 @@ const StudentView: React.FC = () => {
                 </div>
             </section>
 
-            {/* Featured Properties */}
-            <section className="py-12 bg-white">
+            {/* Featured Properties Section */}
+            <section id="property-section" className="py-12 bg-white">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-10">Featured Student Properties</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {properties.slice(0, 6).map((property) => (
-                            <PropertyCard key={property.id} property={property}/>
+                            <PropertyCard key={property.id} property={property} />
                         ))}
                     </div>
 
-
                     <div className="text-center mt-10">
-                        <a href="#" className="w-full">
-                            <button
-                                className="px-6 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors">
-                                View All Properties
-                            </button>
-                        </a>
+                        <button
+                            onClick={handleViewAllProperties}
+                            className="px-6 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors">
+                            View All Properties
+                        </button>
                     </div>
                 </div>
             </section>
@@ -88,7 +114,7 @@ const StudentView: React.FC = () => {
             {/* How It Works */}
             <section className="py-12 bg-gray-50">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-10">How StudentNest Works</h2>
+                <h2 className="text-3xl font-bold text-center mb-10">How StudentNest Works</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -137,7 +163,7 @@ const StudentView: React.FC = () => {
                             <div className="flex items-center">
                                 <div className="w-10 h-10 bg-blue-100 rounded-full mr-3"></div>
                                 <div>
-                                    <p className="font-medium">Sarah Johnson</p>
+                                    <p className="font-medium">Diya Sharma</p>
                                     <p className="text-sm text-gray-500">Computer Science Student</p>
                                 </div>
                             </div>
@@ -150,7 +176,7 @@ const StudentView: React.FC = () => {
                             <div className="flex items-center">
                                 <div className="w-10 h-10 bg-blue-100 rounded-full mr-3"></div>
                                 <div>
-                                    <p className="font-medium">Michael Chen</p>
+                                    <p className="font-medium">Ram Rathod</p>
                                     <p className="text-sm text-gray-500">Business Administration Student</p>
                                 </div>
                             </div>
@@ -158,12 +184,12 @@ const StudentView: React.FC = () => {
 
                         <div className="bg-gray-50 p-6 rounded-lg">
                             <p className="text-gray-600 mb-4">
-                                "As an international student, finding accommodation was my biggest worry. StudentNest made it simple and I saved so much by avoiding broker fees!"
+                                "As a student, finding accommodation was my biggest worry. StudentNest made it simple and I saved so much by avoiding broker fees!"
                             </p>
                             <div className="flex items-center">
                                 <div className="w-10 h-10 bg-blue-100 rounded-full mr-3"></div>
                                 <div>
-                                    <p className="font-medium">Elena Rodriguez</p>
+                                    <p className="font-medium">Ananya Bakshi</p>
                                     <p className="text-sm text-gray-500">Engineering Student</p>
                                 </div>
                             </div>
@@ -175,23 +201,22 @@ const StudentView: React.FC = () => {
             {/* CTA Section */}
             <section className="py-12 bg-blue-600 text-white">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl font-bold mb-6">Ready to Find Your Student Home?</h2>
+                    <h2 className="text-3xl font-bold mb-6">
+                        Ready to Find Your Student Home?
+                    </h2>
                     <p className="text-xl mb-8 max-w-2xl mx-auto">
                         Join thousands of students who found their perfect accommodation without paying broker fees.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#">
-                            <button
-                                className="px-6 py-3 bg-white text-blue-600 rounded-md font-medium hover:bg-gray-100 transition-colors">
-                                Search Properties
-                            </button>
-                        </a>
-                        <a href="#">
-                            <button
-                                className="px-6 py-3 bg-blue-700 text-white rounded-md font-medium hover:bg-blue-800 transition-colors">
-                                Sign Up Now
-                            </button>
-                        </a>
+                        <button
+                            onClick={handleSearchClick} // 👈 Add this function
+                            className="px-6 py-3 bg-white text-blue-600 rounded-md font-medium hover:bg-gray-100 transition-colors"
+                        >
+                            Search Properties
+                        </button>
+                        <Link to="/signup" className="px-6 py-3 bg-blue-700 text-white rounded-md font-medium hover:bg-blue-800 transition-colors">
+                            Sign Up Now
+                        </Link>
                     </div>
                 </div>
             </section>
