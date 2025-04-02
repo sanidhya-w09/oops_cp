@@ -1,6 +1,7 @@
 import React from "react";
 import { MapPin, Users, IndianRupee, CalendarCheck, Map } from "lucide-react";
 import { Property } from "../types.ts";
+import {Link} from "react-router-dom";
 
 interface PropertyCardProps {
     property: Property;
@@ -68,11 +69,11 @@ export const PropertyCard2: React.FC<PropertyCardProps> = ({ property }) => {
 
                 {/* View Details Button */}
                 <div className="border-t pt-4">
-                    <a href="#" className="w-full">
+                    <Link to={`/property/${property.id}`} className="w-full">
                         <button className="w-full bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 transition-colors">
                             View Details
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

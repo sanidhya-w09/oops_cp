@@ -11,7 +11,8 @@ export const properties: Property[] = [
         amenities: ["Wi-Fi", "Furnished", "Utilities Included", "Laundry"],
         imageUrl: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         distance: "5 min walk to campus",
-        available: "Available Now"
+        available: "Available Now",
+        description: "A sleek and contemporary studio perfect for students or professionals, offering a minimalist space with all essential amenities. Enjoy the convenience of Wi-Fi, utilities included, and easy access to local transport, making it a perfect blend of comfort and practicality."
     },
     {
         id: 2,
@@ -23,7 +24,8 @@ export const properties: Property[] = [
         amenities: ["Parking", "Balcony", "Dishwasher", "Gym Access"],
         imageUrl: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80",
         distance: "10 min bus to campus",
-        available: "From September 1"
+        available: "From September 1",
+        description: "This large, airy apartment offers the perfect balance between modern living and comfort. With a spacious layout, private parking, and access to a gym, it’s ideal for small families or roommates looking for a cozy yet functional space."
     },
     {
         id: 3,
@@ -35,7 +37,8 @@ export const properties: Property[] = [
         amenities: ["All Bills Included", "Shared Kitchen", "Garden", "Cleaning Service"],
         imageUrl: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         distance: "15 min walk to campus",
-        available: "Available Now"
+        available: "Available Now",
+        description: "Located in a peaceful neighborhood, this charming room in a shared house offers a community feel. Perfect for those who enjoy socializing, it includes all essential utilities and shared spaces like a kitchen and garden, making it a great budget-friendly choice."
     },
     {
         id: 4,
@@ -47,7 +50,8 @@ export const properties: Property[] = [
         amenities: ["Air Conditioning", "Study Room", "Rooftop Terrace", "24/7 Security"],
         imageUrl: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         distance: "20 min bike to campus",
-        available: "From August 15"
+        available: "From August 15",
+        description: "A chic and high-end loft designed for students who want to live in style. With a private study area, air conditioning, and rooftop views, this loft offers both comfort and inspiration. Plus, it's just a short commute to top universities."
     },
     {
         id: 5,
@@ -59,7 +63,8 @@ export const properties: Property[] = [
         amenities: ["Furnished", "Backyard", "Street Parking", "Pets Allowed"],
         imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         distance: "25 min bus to campus",
-        available: "From September 1"
+        available: "From September 1",
+        description: "Ideal for those seeking an affordable living situation without compromising on space, this 3-bedroom house share offers cozy, furnished rooms and a private backyard. The perfect blend of comfort and budget-friendly living for students or young professionals."
     },
     {
         id: 6,
@@ -71,7 +76,8 @@ export const properties: Property[] = [
         amenities: ["Private Bathroom", "Study Desk", "Meal Plan Option", "Gym"],
         imageUrl: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         distance: "On campus",
-        available: "From August 20"
+        available: "From August 20",
+        description: "A private, modern ensuite room that provides ultimate privacy while remaining connected to the campus or work. With a spacious bathroom, study desk, and optional meal plan, it’s designed for those who value peace and independence."
     },
     {
         id: 7,
@@ -83,7 +89,8 @@ export const properties: Property[] = [
         amenities: ["Fully Furnished", "Washing Machine", "Wi-Fi", "Elevator", "Parking"],
         imageUrl: "https://images.unsplash.com/photo-1499916078039-922301b0eb9b?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "5 minutes walk to MG Road",
-        available: "Available now"
+        available: "Available now",
+        description: "This stylish 1BHK apartment is a perfect choice for individuals or couples who appreciate comfort and convenience. With a fully furnished interior, essential appliances, and easy access to local attractions, it’s an ideal home base in the heart of the city."
     },
     {
         id: 8,
@@ -95,7 +102,8 @@ export const properties: Property[] = [
         amenities: ["Balcony", "Air Conditioning", "Wi-Fi", "24/7 Security", "Swimming Pool"],
         imageUrl: "https://images.unsplash.com/photo-1499955085172-a104c9463ece?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "10 minutes drive to Pune Station",
-        available: "From March 15"
+        available: "From March 15",
+        description: "Enjoy the charm of a cozy studio apartment with a private balcony. Located in a prime area, this unit comes with all the comforts you need, including air conditioning, Wi-Fi, and access to a swimming pool, offering a peaceful retreat right at your doorstep."
     },
     {
         id: 9,
@@ -107,7 +115,8 @@ export const properties: Property[] = [
         amenities: ["Private Terrace", "Jacuzzi", "Gym", "Smart Home Features", "24/7 Security"],
         imageUrl: "https://images.unsplash.com/photo-1560185007-5f0bb1866cab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "15 minutes drive to Hinjewadi IT Park",
-        available: "Available now"
+        available: "Available now",
+        description: "For those who want nothing but the best, this luxury penthouse offers panoramic views, a private terrace, and high-end amenities like a jacuzzi and gym. It’s an exclusive, high-luxury home for anyone seeking a prestigious living space."
     },
     {
         id: 10,
@@ -119,7 +128,8 @@ export const properties: Property[] = [
         amenities: ["Garden View", "Fully Furnished", "Wi-Fi", "Dishwasher", "Parking"],
         imageUrl: "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1992&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "5 minutes walk to Viman Nagar Mall",
-        available: "From April 1"
+        available: "From April 1",
+        description: "This bright and spacious 1BHK apartment offers a serene garden view, ideal for anyone looking for peace and quiet in a bustling city. It combines modern amenities with the tranquility of nature, offering a peaceful escape after a busy day."
     },
     {
         id: 11,
@@ -131,7 +141,8 @@ export const properties: Property[] = [
         amenities: ["Fully Furnished", "Washing Machine", "Wi-Fi", "Lift", "24/7 Water Supply"],
         imageUrl: "https://images.unsplash.com/photo-1531835551805-16d864c8d311?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "10 minutes drive to Koregaon Park",
-        available: "From March 25"
+        available: "From March 25",
+        description: "Perfect for singles or couples, this charming 1BHK offers modern comforts in a great neighborhood. Fully furnished and equipped with all the essentials, it’s designed to offer both convenience and warmth, making it a wonderful place to call home."
     },
     {
         id: 12,
@@ -143,7 +154,8 @@ export const properties: Property[] = [
         amenities: ["Swimming Pool", "Wi-Fi", "Parking", "Lift", "24/7 Security"],
         imageUrl: "https://plus.unsplash.com/premium_photo-1683888725040-f305c0bf7820?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "20 minutes drive to Hinjewadi IT Park",
-        available: "Available now"
+        available: "Available now",
+        description: "Live in style with this stylish studio apartment offering access to a pristine swimming pool. It’s perfect for those who enjoy modern living, with Wi-Fi, security, and the option for a relaxing swim right outside your door."
     },
     {
         id: 13,
@@ -155,7 +167,8 @@ export const properties: Property[] = [
         amenities: ["City View", "Wi-Fi", "AC", "Fully Furnished", "Parking"],
         imageUrl: "https://plus.unsplash.com/premium_photo-1684175656172-19a7ee56f0c8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "15 minutes drive to Pune University",
-        available: "From March 22"
+        available: "From March 22",
+        description: "This modern 1BHK offers stunning city views, ideal for anyone who enjoys a lively atmosphere and easy access to city life. With stylish furnishings and top-notch amenities, it’s a perfect balance of convenience and luxury."
     },
     {
         id: 14,
@@ -167,7 +180,8 @@ export const properties: Property[] = [
         amenities: ["Gym", "Wi-Fi", "Washing Machine", "24/7 Security", "Elevator"],
         imageUrl: "https://plus.unsplash.com/premium_photo-1661962296943-bc59322f6424?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "10 minutes walk to Dmart",
-        available: "Available now"
+        available: "Available now",
+        description: "A charming studio that offers more than just a place to sleep. With gym access, Wi-Fi, and 24/7 security, it’s designed for those who want a secure, active lifestyle without sacrificing comfort. Ideal for individuals who prefer living close to the action."
     },
     {
         id: 15,
@@ -179,7 +193,8 @@ export const properties: Property[] = [
         amenities: ["Home Theater", "Swimming Pool", "Gym", "Wi-Fi", "24/7 Security"],
         imageUrl: "https://plus.unsplash.com/premium_photo-1675615667883-38c070716700?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         distance: "20 minutes drive to Magarpatta City",
-        available: "From April 5"
+        available: "From April 5",
+        description: "For those seeking the ultimate luxury, this 3BHK apartment is equipped with a state-of-the-art home theater, a swimming pool, and a fully equipped gym. Perfect for family living or anyone who enjoys a high-end lifestyle with all the amenities you could ever need."
     }
 ];
 export default properties

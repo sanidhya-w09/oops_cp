@@ -48,14 +48,14 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
                     ))}
                 </div>
 
-                <div className="border-t pt-4">
+                {/*<div className="border-t pt-4">
                     <a href="#" className="w-full">
                         <button
                             className="w-full bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 transition-colors">
                             View Details
                         </button>
                     </a>
-                </div>
+                </div>*/}
             </div>
         </div>
     );
