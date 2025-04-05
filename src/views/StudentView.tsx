@@ -1,5 +1,5 @@
 import React, {useState,useRef} from 'react';
-import {Search, MapPin, Building} from 'lucide-react';
+import {Search, MapPin, Building,DollarSignIcon,TimerIcon} from 'lucide-react';
 import { Link } from "react-router-dom";
 import { PropertyCard } from '../Components/PropertyCard';
 import { properties } from '../Data/properties';
@@ -90,10 +90,10 @@ const StudentView: React.FC = () => {
                 </div>
             </section>
 
-            {/* Featured Properties Section */}
+            {/* Featured ViewAllProperties Section */}
             <section id="property-section" className="py-12 bg-white">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-10">Featured Student Properties</h2>
+                    <h2 className="text-3xl font-bold text-center mb-10">Featured Properties</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {properties.slice(0, 6).map((property) => (
@@ -145,6 +145,43 @@ const StudentView: React.FC = () => {
                             <p className="text-gray-600">
                                 Schedule a viewing, sign your lease, and move into your new student home.
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Advantages */}
+            <section className="py-12 bg-gray-50">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold text-center mb-10">Advantages of StudentNest</h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <DollarSignIcon className="h-8 w-8 text-blue-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold mb-3">Cost Savings</h3>
+                            <p className="text-gray-600">
+                                Students avoid extra fees by connecting directly with landlords, reducing rental costs.                            </p>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Building className="h-8 w-8 text-blue-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold mb-3">Search for Roommates</h3>
+                                <Link to="/roommatefinder" className="bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors px-6 py-3 flex items-center justify-center text-lg">
+                                    Find Roommates
+                                </Link>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <TimerIcon className="h-8 w-8 text-blue-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold mb-3">Simplified Process</h3>
+                            <p className="text-gray-600">
+                                The platform makes it easier for students to find and communicate with landlords quickly.                            </p>
                         </div>
                     </div>
                 </div>

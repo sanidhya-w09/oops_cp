@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import { PropertyCard2 } from "../Components/PropertyCard2";
 import properties from "../Data/properties"; // Ensure the correct path to properties.ts
 
-const Properties: React.FC = () => {
+const ViewAllProperties: React.FC = () => {
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
@@ -19,4 +19,4 @@ const Properties: React.FC = () => {
     );
 };
 
-export default Properties;
+export default ViewAllProperties;

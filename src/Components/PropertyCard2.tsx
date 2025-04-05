@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPin, Users, IndianRupee, CalendarCheck, Map } from "lucide-react";
+import { MapPin, Users, IndianRupee, CalendarCheck, Map ,StarIcon} from "lucide-react";
 import { Property } from "../types.ts";
 import {Link} from "react-router-dom";
 
@@ -24,21 +24,26 @@ export const PropertyCard2: React.FC<PropertyCardProps> = ({ property }) => {
 
             {/* Property Details */}
             <div className="p-5">
-                <h3 className="text-xl font-semibold mb-2">{property.title}</h3>
-
+                    <div className="flex justify-between items-center">
+                        <h3 className="text-xl font-semibold mb-2">{property.title}</h3>
+                        <div className="flex items-center text-yellow-500">
+                            <StarIcon className="h-5 w-5 mr-1"/>
+                            <span>{property.rating}</span>
+                        </div>
+                    </div>
                 <div className="space-y-2 text-gray-600">
                     <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-2 text-blue-600" />
+                        <MapPin className="h-4 w-4 mr-2 text-blue-600"/>
                         <span className="text-sm">{property.location}</span>
                     </div>
 
                     <div className="flex items-center">
-                        <CalendarCheck className="h-4 w-4 mr-2 text-green-600" />
+                        <CalendarCheck className="h-4 w-4 mr-2 text-green-600"/>
                         <span className="text-sm">{property.available}</span>
                     </div>
 
                     <div className="flex items-center">
-                        <Map className="h-4 w-4 mr-2 text-gray-500" />
+                        <Map className="h-4 w-4 mr-2 text-gray-500"/>
                         <span className="text-sm">{property.distance}</span>
                     </div>
                 </div>
@@ -46,12 +51,12 @@ export const PropertyCard2: React.FC<PropertyCardProps> = ({ property }) => {
                 {/* Price and Bedroom Info */}
                 <div className="flex items-center justify-between mt-4 mb-4">
                     <div className="flex items-center text-blue-600 font-bold">
-                        <IndianRupee className="h-5 w-5 mr-1" />
+                        <IndianRupee className="h-5 w-5 mr-1"/>
                         <span>{property.price}/month</span>
                     </div>
 
                     <div className="flex items-center text-gray-600">
-                        <Users className="h-4 w-4 mr-1" />
+                        <Users className="h-4 w-4 mr-1"/>
                         <span className="text-sm">
                             {property.bedrooms} {property.bedrooms === 1 ? "bedroom" : "bedrooms"}
                         </span>
@@ -70,7 +75,8 @@ export const PropertyCard2: React.FC<PropertyCardProps> = ({ property }) => {
                 {/* View Details Button */}
                 <div className="border-t pt-4">
                     <Link to={`/property/${property.id}`} className="w-full">
-                        <button className="w-full bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 transition-colors">
+                        <button
+                            className="w-full bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 transition-colors">
                             View Details
                         </button>
                     </Link>
