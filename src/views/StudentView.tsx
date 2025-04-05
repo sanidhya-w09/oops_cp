@@ -1,4 +1,4 @@
-import React, {useState,useRef} from 'react';
+import React from 'react';
 import {Search, MapPin, Building,DollarSignIcon,TimerIcon} from 'lucide-react';
 import { Link } from "react-router-dom";
 import { PropertyCard } from '../Components/PropertyCard';
@@ -7,21 +7,10 @@ import { useNavigate } from 'react-router-dom'; // ✅ Import useNavigate
 
 
 const StudentView: React.FC = () => {
-    const [searchQuery, setSearchQuery] = useState('');
-    const [searchOpen, setSearchOpen] = useState(false); // State to open search bar
-    const searchRef = useRef<HTMLDivElement>(null); // Ref for search bar container
     const navigate = useNavigate(); // ✅ Initialize navigation
 
     // Function to scroll to top and open search bar
-    const handleSearchClick = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        setSearchOpen(true);
 
-        // Optional: Focus on input field after scrolling
-        setTimeout(() => {
-            searchRef.current?.querySelector("input")?.focus();
-        }, 300); // Delay ensures scroll completes first
-    };
     const handleViewAllProperties = () => {
         navigate('/properties');
         setTimeout(() => {
@@ -43,7 +32,7 @@ const StudentView: React.FC = () => {
                             Connect directly with landlords. No broker fees. No hassle.
                         </p>
 
-                        {/* Search Bar */}
+                        {/* Search Bar
                         <div
                             ref={searchRef}
                             className={`bg-white rounded-lg shadow-lg p-2 flex flex-col md:flex-row transition-all duration-300 ${
@@ -65,7 +54,7 @@ const StudentView: React.FC = () => {
                             >
                                 Find Properties
                             </button>
-                        </div>
+                        </div>*/}
 
                         {/* Quick Filters
                         <div className="flex flex-wrap justify-center gap-3 mt-6">
@@ -245,12 +234,11 @@ const StudentView: React.FC = () => {
                         Join thousands of students who found their perfect accommodation without paying broker fees.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <button
-                            onClick={handleSearchClick} // 👈 Add this function
-                            className="px-6 py-3 bg-white text-blue-600 rounded-md font-medium hover:bg-gray-100 transition-colors"
-                        >
+                        <Link to="/properties" className="px-6 py-3 bg-white text-blue-600 rounded-md font-medium hover:bg-gray-100 transition-colors">
+                        <button>
                             Search Properties
                         </button>
+                        </Link>
                         <Link to="/signup" className="px-6 py-3 bg-blue-700 text-white rounded-md font-medium hover:bg-blue-800 transition-colors">
                             Sign Up Now
                         </Link>

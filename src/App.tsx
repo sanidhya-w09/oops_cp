@@ -14,6 +14,7 @@ import PropertyDetails from "./views/PropertyDetails.tsx";
 import properties from "./Data/properties.ts";
 import ForgotPassword from "./views/ForgotPassword.tsx";
 import AddRoommate from "./views/AddRoommate.tsx";
+import PropertyList from "./views/PropertyList.tsx";
 
 function App() {
     const [userType, setUserType] = useState<'student' | 'landlord'>('student');
@@ -25,6 +26,7 @@ function App() {
                 <main className="flex-grow">
                     <Routes>
                         <Route path="/" element={userType === "student" ? <StudentView /> : <LandlordView />} />
+                        <Route path="/student" element={<StudentView/>}/>
                         <Route path="/login" element={<Login />} />
                         <Route path="/signup" element={<Signup />} />
                         <Route path="/properties" element={<ViewAllProperties />} />
@@ -50,6 +52,7 @@ function App() {
                         <Route path="/property/:id" element={<PropertyDetails />} />
                         <Route path="/forgotpassword" element={<ForgotPassword />}/>
                         <Route path="/add-roommate" element={<AddRoommate />} />
+                        <Route path="/list-property" element={<PropertyList/>}/>
                     </Routes>
                 </main>
                 <Footer />

@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserPlus, Eye, EyeOff } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../Data/firebase";
 
 const Signup: React.FC = () => {
-    useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
-
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         if (!name || !email || !password || !confirmPassword) {
@@ -31,21 +36,30 @@ const Signup: React.FC = () => {
             return;
         }
 
-        toast.success("Signup successful!");
-        console.log("Signing up with:", { name, email, password });
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            await updateProfile(userCredential.user, {
+                displayName: name,
+            });
+
+            toast.success("Signup successful!");
+            console.log("Signed up with:", email);
+
+            navigate("/student");
+        } catch (error: unknown) {
+            toast.error("Signup failed. Please try again.");
+        }
     };
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-indigo-600 px-4">
             <Toaster position="top-center" reverseOrder={false} />
             <div className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-sm">
-                {/* Header */}
                 <div className="flex items-center justify-center mb-6">
                     <UserPlus className="h-8 w-8 text-blue-600 mr-2" />
                     <h2 className="text-3xl font-bold text-gray-800">Create an Account</h2>
                 </div>
 
-                {/* Form */}
                 <form onSubmit={handleSubmit}>
                     <div className="mb-5">
                         <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>

@@ -1,19 +1,19 @@
 export interface Property {
-    id: number;
+    id?: number;
     title: string;
     location: string;
     price: number;
     bedrooms: number;
     type: string;
     amenities: string[];
-    imageUrl: string;
-    description?: string;
-    distance?: string;
+    imageUrl?: string;
+    description: string;
+    distance: string;
     available?: string;
-    rating:string;
+    rating?:string;
     landlord:string;
     contact:number;
-    gallery: string[];
+    gallery?: string[];
 }
 export interface Roommate{
     name: string;

@@ -1,5 +1,7 @@
+// src/pages/AddRoommate.tsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 const AddRoommate: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -12,7 +14,6 @@ const AddRoommate: React.FC = () => {
         current_home: '',
     });
 
-    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,35 +22,42 @@ const AddRoommate: React.FC = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
-        setError('');
     };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Simple validation
         const requiredFields = ['name', 'gender', 'university', 'preferences', 'contact_info', 'current_info', 'current_home'];
         const isFormValid = requiredFields.every(field => formData[field as keyof typeof formData].trim() !== '');
 
         if (!isFormValid) {
-            setError('Please fill in all fields.');
+            toast.error('Please fill in all fields.');
             return;
         }
 
-        // Here, you could send data to a backend or global state
-        console.log('New Roommate Added:', formData);
+        const newRoommate = {
+            name: formData.name,
+            gender: formData.gender,
+            university: formData.university,
+            preference: formData.preferences,
+            contact_info: formData.contact_info,
+            current_info: formData.current_info,
+            current_home: formData.current_home,
+        };
 
-        // Redirect back to RoommateFinder
-        navigate('/roommate-finder');
+        const existing = JSON.parse(localStorage.getItem('roommates') || '[]');
+        localStorage.setItem('roommates', JSON.stringify([...existing, newRoommate]));
+
+        toast.success("Roommate added successfully!");
+        navigate('/RoommateFinder');
     };
 
     return (
         <div className="max-w-xl mx-auto px-4 py-10">
+            <Toaster position="top-center" reverseOrder={false} />
             <h1 className="text-3xl font-bold text-blue-600 mb-6 text-center">Add Roommate</h1>
 
             <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow p-6 space-y-5 border border-gray-200">
-                {error && <div className="text-red-600 text-sm font-medium text-center">{error}</div>}
-
                 <div>
                     <label className="block mb-1 text-sm font-medium text-gray-700">Name</label>
                     <input
@@ -72,7 +80,6 @@ const AddRoommate: React.FC = () => {
                         <option value="">Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
-                        <option value="Other">Other</option>
                     </select>
                 </div>
 

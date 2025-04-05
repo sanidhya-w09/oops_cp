@@ -1,5 +1,6 @@
 import React from 'react';
 import {Home, Users, Shield, CheckCircle, MessageSquare, IndianRupeeIcon} from 'lucide-react';
+import {Link} from "react-router-dom";
 
 const LandlordView: React.FC = () => {
     return (
@@ -14,12 +15,12 @@ const LandlordView: React.FC = () => {
                         <p className="text-xl mb-8">
                             Connect directly with verified students. No middlemen. Higher returns.
                         </p>
-                        <a href="#" className="w-full">
-                            <button
-                                className="px-8 py-4 bg-white text-indigo-600 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors">
+                        <Link to="/list-property">
+                            <button className="px-8 py-4 bg-white text-indigo-600 rounded-md font-medium hover:bg-gray-100 transition-colors">
                                 List Your Property
                             </button>
-                        </a>
+                        </Link>
+
                     </div>
                 </div>
             </section>
@@ -317,7 +318,7 @@ const LandlordView: React.FC = () => {
                                 <div className="w-10 h-10 bg-indigo-100 rounded-full mr-3"></div>
                                 <div>
                                     <p className="font-medium">Aditya Singhania</p>
-                                    <p className="text-sm text-gray-500">Property Owner, 6 listing</p>
+                                    <p className="text-sm text-gray-500">Property Owner, 6 listings</p>
                                 </div>
                             </div>
                         </div>
@@ -333,12 +334,12 @@ const LandlordView: React.FC = () => {
                         Join thousands of landlords who are connecting directly with student tenants and maximizing their rental income.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#">
-                            <button
-                                className="px-6 py-3 bg-white text-indigo-600 rounded-md font-medium hover:bg-gray-100 transition-colors">
+                        <Link to="/list-property">
+                            <button className="px-6 py-3 bg-white text-indigo-600 rounded-md font-medium hover:bg-gray-100 transition-colors">
                                 List Your Property
                             </button>
-                        </a>
+                        </Link>
+
                     </div>
                 </div>
             </section>
