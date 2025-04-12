@@ -39,6 +39,8 @@ const PropertyList: React.FC = () => {
         console.log("Property Submitted:", formData);
     };
 
+    const today = new Date().toISOString().split("T")[0];
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
             <Toaster position="top-center" reverseOrder={false} />
@@ -48,12 +50,11 @@ const PropertyList: React.FC = () => {
                     {[
                         { name: "title", placeholder: "Title" },
                         { name: "location", placeholder: "Location" },
-                        { name: "price", placeholder: "Price", type: "number" },
+                        { name: "price", placeholder: "Rent", type: "number" },
                         { name: "bedrooms", placeholder: "Bedrooms", type: "number" },
-                        { name: "type", placeholder: "Type (e.g. Apartment)" },
+                        { name: "type", placeholder: "Type (e.g. Flat, House, etc.)" },
                         { name: "amenities", placeholder: "Amenities (comma separated)" },
                         { name: "distance", placeholder: "Distance (e.g. 2km from campus)" },
-                        { name: "available", placeholder: "Availability (e.g. Yes/No)" },
                         { name: "landlord", placeholder: "Landlord Name" },
                         { name: "contact", placeholder: "Landlord Contact" },
                     ].map((field) => (
@@ -67,6 +68,25 @@ const PropertyList: React.FC = () => {
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none transition"
                         />
                     ))}
+
+                    {/* Availability Date with Faux Placeholder */}
+                    <div className="relative">
+                        {!formData.available && (
+                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                                Available From
+                            </span>
+                        )}
+                        <input
+                            type="date"
+                            name="available"
+                            min={today}
+                            value={formData.available}
+                            onChange={handleChange}
+                            className={`w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none transition ${
+                                !formData.available ? "text-white" : "text-black"
+                            }`}
+                        />
+                    </div>
 
                     <textarea
                         name="description"

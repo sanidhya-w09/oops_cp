@@ -49,7 +49,7 @@ const AddRoommate: React.FC = () => {
         localStorage.setItem('roommates', JSON.stringify([...existing, newRoommate]));
 
         toast.success("Roommate added successfully!");
-        navigate('/RoommateFinder');
+        navigate('/roommatefinder');
     };
 
     return (

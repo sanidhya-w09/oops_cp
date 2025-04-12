@@ -33,16 +33,19 @@ const PropertyDetails = () => {
         );
 
     const handlePrevImage = () => {
+        if (!property.gallery) return;
         setCurrentImageIndex((prev) =>
-            prev === 0 ? property.gallery.length - 1 : prev - 1
+            prev === 0 ? property.gallery!.length - 1 : prev - 1
         );
     };
 
     const handleNextImage = () => {
+        if (!property.gallery) return;
         setCurrentImageIndex((prev) =>
-            prev === property.gallery.length - 1 ? 0 : prev + 1
+            prev === property.gallery!.length - 1 ? 0 : prev + 1
         );
     };
+
 
     return (
         <div className="relative max-w-5xl mx-auto px-4 py-8">
@@ -56,25 +59,28 @@ const PropertyDetails = () => {
             </button>
 
             {/* Image Carousel */}
-            <div className="relative w-full h-96 mb-6 rounded-xl overflow-hidden shadow-md">
-                <img
-                    src={property.gallery[currentImageIndex]}
-                    alt={`Property image ${currentImageIndex + 1}`}
-                    className="w-full h-full object-cover transition duration-300"
-                />
-                <button
-                    onClick={handlePrevImage}
-                    className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-gray-100"
-                >
-                    ‹
-                </button>
-                <button
-                    onClick={handleNextImage}
-                    className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-gray-100"
-                >
-                    ›
-                </button>
-            </div>
+            {property.gallery && property.gallery.length > 0 && (
+                <div className="relative w-full h-96 mb-6 rounded-xl overflow-hidden shadow-md">
+                    <img
+                        src={property.gallery[currentImageIndex]}
+                        alt={`Property image ${currentImageIndex + 1}`}
+                        className="w-full h-full object-cover transition duration-300"
+                    />
+                    <button
+                        onClick={handlePrevImage}
+                        className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-gray-100"
+                    >
+                        ‹
+                    </button>
+                    <button
+                        onClick={handleNextImage}
+                        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-gray-100"
+                    >
+                        ›
+                    </button>
+                </div>
+            )}
+
 
             {/* Title & Rating */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
