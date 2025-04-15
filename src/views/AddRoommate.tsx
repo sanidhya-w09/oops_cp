@@ -54,7 +54,7 @@ const AddRoommate: React.FC = () => {
 
     return (
         <div className="max-w-xl mx-auto px-4 py-10">
-            <Toaster position="top-center" reverseOrder={false} />
+            <Toaster position="top-center" reverseOrder={false}/>
             <h1 className="text-3xl font-bold text-blue-600 mb-6 text-center">Add Roommate</h1>
 
             <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow p-6 space-y-5 border border-gray-200">
@@ -145,6 +145,16 @@ const AddRoommate: React.FC = () => {
                     Add Roommate
                 </button>
             </form>
+            {/*<button
+                onClick={() => {
+                    localStorage.removeItem('roommates');
+                    toast.success('All locally stored roommates deleted!');
+                }}
+                className="mt-4 w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 transition-colors font-semibold"
+            >
+                Delete All Local Roommates
+            </button>*/}
+
         </div>
     );
 };
